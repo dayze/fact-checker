@@ -40,7 +40,8 @@
             </li>
             <li class="vertical-middle">
               <div class="onoffswitch">
-                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked
+                    @click="orderTruthiness" v-model="truthinessOrder">
                 <label class="onoffswitch-label" for="myonoffswitch">
                   <span class="onoffswitch-inner"></span>
                   <span class="onoffswitch-switch"></span>
@@ -131,7 +132,8 @@
         query: '',
         facts: {},
         loading: false,
-        dateOrder: true
+        dateOrder: false,
+        truthinessOrder: false
       }
     },
     methods: {
@@ -158,18 +160,16 @@
       },
       orderDate () {
         let filter = new Filter(this.facts)
-        if (this.dateOrder) {
-          filter.orderArrayByDateAsc()
-        } else {
-          filter.orderArrayByDateDesc()
-        }
+        this.dateOrder ? filter.orderArrayByDateAsc() : filter.orderArrayByDateDesc()
+      },
+      orderTruthiness () {
+        let filter = new Filter(this.facts)
+        this.facts = this.truthinessOrder ? filter.orderArrayByTruthinessTrue() : filter.orderArrayByTruthinessFalse()
       }
     },
     mounted () {}
   }
 </script>
-<<<<<<< HEAD
-
 <style lang="scss">
     .loader {
         position: absolute;
@@ -181,5 +181,3 @@
         z-index: 10;
     }
 </style>
-=======
->>>>>>> 608f2e4c5933db8fb22997a7f0b8d0bfa346457f
