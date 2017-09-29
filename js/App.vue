@@ -34,49 +34,22 @@
               <span>Filter</span>
             </li>
             <li class="padding-top-bottom">
-              <input id="inputDate" name="inputDate" type="checkbox">
+              <input class="dateCheck" id="inputDate" name="inputDate" type="checkbox">
               <label for="inputDate" class="color-turquoise">date</label>
             </li>
-            <li class="padding-top-bottom">
-              <span class="color-turquoise">Authenticity </span>
-              <input name="authenticityFilter" id="falseAuthenticity" type="radio"/>
-              <label for="falseAuthenticity">False</label>
-              <input name="authenticityFilter" id="trueAuthenticity" type="radio"/>
-              <label for="trueAuthenticity">True</label>
+            <li class="vertical-middle">
+              <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
+              </div>
             </li>
           </ul>
         </div>
-
-
-        <!--<div class="cell-6 margin-0 align-center">
-          <div class="inline-block border-right border-silver padding">
-
-
-
-            <img class="APP_vertical_bottom" src="../media/icon/settings-24.png" alt="Settings icon"/>
-            <span class="txt-size-medium">Filter</span>
-          </div>
-          <ul class="list-unstyled list-separator list-inline inline block padding">
-            <li>
-              <span>&#8593</span>
-              <span class="color-turquoise">date</span>
-            </li>
-            <li>
-              <span class="color-turquoise">Authenticity : </span>
-              <input name="authenticityFilter" id="falseAuthenticity" type="radio"/>
-              <label for="falseAuthenticity">False</label>
-              <input name="authenticityFilter" id="trueAuthenticity" type="radio"/>
-              <label for="trueAuthenticity">True</label>
-            </li>
-          </ul>
-        </div>-->
-        <!--
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>-->
-
       </section>
+
 
       <!-- @@@ FACTS CONTAINER @@@ -->
       <section id="factsBlock" class="container-small margin-auto margin-50-top-bottom">
@@ -123,6 +96,7 @@
           </div>
         </div>
       </section>
+
     </div>
 
     <!-- @@@ FOOTER @@@ -->
@@ -138,6 +112,7 @@
       </div>
 
     </footer>
+
   </div>
 </template>
 
@@ -186,15 +161,3 @@
     }
   }
 </script>
-
-<style lang="scss">
-  .loader {
-    position: absolute;
-    margin: auto;
-    top: 50%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-  }
-</style>

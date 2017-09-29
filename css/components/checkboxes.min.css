@@ -1,13 +1,13 @@
 /* Cachons la case à cocher */
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+[type="checkbox"].dateCheck:not(:checked),
+[type="checkbox"].dateCheck:checked {
   position: absolute;
   left: -9999px;
 }
 
 /* on prépare le label */
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
+[type="checkbox"].dateCheck:not(:checked) + label,
+[type="checkbox"].dateCheck:checked + label {
   position: relative; /* permet de positionner les pseudo-éléments */
   padding-left: 25px; /* fait un peu d'espace pour notre case à venir */
   cursor: pointer; /* affiche un curseur adapté */
@@ -15,8 +15,8 @@
 
 /* Aspect des checkboxes */
 /* :before sert à créer la case à cocher */
-/*[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
+/*[type="checkbox"].dateCheck:not(:checked) + label:before,
+[type="checkbox"].dateCheck:checked + label:before {
   content: '';
   position: absolute;
   left: 0;
@@ -30,8 +30,8 @@
 }*/
 
 /* Aspect général de la coche */
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+[type="checkbox"].dateCheck:not(:checked) + label:after,
+[type="checkbox"].dateCheck:checked + label:after {
   z-index: 10000;
   content: '\2191';
   position: absolute;
@@ -43,36 +43,36 @@
 }
 
 /* Aspect si "pas cochée" */
-[type="checkbox"]:not(:checked) + label:after {
+[type="checkbox"].dateCheck:not(:checked) + label:after {
   content: '\2193';
 }
 
 /* Aspect si "cochée" */
-[type="checkbox"]:checked + label:after {
+[type="checkbox"].dateCheck:checked + label:after {
   opacity: 1; /* coche opaque */
   transform: scale(1); /* mise à l'échelle 1:1 */
 }
 
 /* aspect désactivée */
-[type="checkbox"]:disabled:not(:checked) + label:before,
-[type="checkbox"]:disabled:checked + label:before {
+[type="checkbox"].dateCheck:disabled:not(:checked) + label:before,
+[type="checkbox"].dateCheck:disabled:checked + label:before {
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;
 }
 
 /* styles de la coche (si cochée/désactivée) */
-[type="checkbox"]:disabled:checked + label:after {
+[type="checkbox"].dateCheck:disabled:checked + label:after {
   color: #999;
 }
 
 /* on style aussi le label quand désactivé */
-[type="checkbox"]:disabled + label {
+[type="checkbox"].dateCheck:disabled + label {
   color: #aaa;
 }
 
 /* aspect au focus de l'élément */
-[type="checkbox"]:checked:focus + label:before,
-[type="checkbox"]:not(:checked):focus + label:before {
+[type="checkbox"].dateCheck:checked:focus + label:before,
+[type="checkbox"].dateCheck:not(:checked):focus + label:before {
   border: 1px dotted blue;
 }
