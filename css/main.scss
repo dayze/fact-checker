@@ -1,0 +1,42 @@
+@font-face {
+  font-family: bebase;
+  src: url("fonts/bebas_neue/BebasNeue.otf");
+}
+
+@font-face {
+  font-family: vincentia;
+  src: url("fonts/vincentia/Vincentia.otf");
+}
+
+input {
+  outline: none;
+}
+
+.APP_font_bebase {
+  font-family: bebase, sans-serif;
+}
+
+.APP_font_vincentia {
+  font-family: vincentia, sans-serif;
+}
+
+#searchBtn {
+  line-height: 38px;
+  outline: none;
+  cursor: pointer;
+}
+
+header {
+  background-image: url("../media/pattern/footer_lodyas.png");
+}
+
+#footerPusher {
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin-bottom: -78px; /* 78 = footer height desktop screen */
+  padding-bottom: 78px;
+}
+
+.APP_vertical_bottom {
+  vertical-align: bottom;
+}
