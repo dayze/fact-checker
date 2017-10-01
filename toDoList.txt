@@ -4,3 +4,4 @@
 - sort results
 - pagination
 - facts presentation : date, url to source + rework fact authenticity design !
+- facts by date
