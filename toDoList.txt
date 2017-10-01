@@ -1,5 +1,4 @@
 - press enter key => click search button
-- homepage and no fact found view => 2 views
 - blank research => infinite loop, no result ! ! !
 - sort results
 - pagination

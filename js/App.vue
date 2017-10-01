@@ -149,7 +149,8 @@
           this.loading = false
           this.queryHasBeenSent = true
         }, response => {
-          // error callback
+          this.loading = false
+          this.queryHasBeenSent = true
         })
       },
       thruthiness (fact, str) {
