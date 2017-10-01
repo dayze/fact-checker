@@ -27,7 +27,7 @@
             </header>
 
       <!-- @@@ FILTER BAR @@@ -->
-      <section class="row border-bottom border-silver flex-x-center">
+      <section v-if="Object.keys(facts).length !== 0" class="row border-bottom border-silver flex-x-center">
         <div class="cell-12-margin-0 align-center">
           <ul class="list-unstyled list-inline inline block list-separator">
             <li class="padding-top-bottom">
@@ -60,7 +60,7 @@
           <loader class="loader"></loader>
         </div>
         <div>
-          <div v-if="Object.keys(facts).length === 0 && !loading" class="row-column flex-y-center">
+          <div v-if="Object.keys(facts).length === 0 && !loading && queryHasBeenSent" class="row-column flex-y-center">
             <div class="cell-6">
               <figure>
                 <img class="responsive-img" src="../media/icon/emoticon-blazed.png"
@@ -75,7 +75,10 @@
               <hr class="ellipse">
             </div>
           </div>
-          <div v-else="" v-for="fact in facts"
+            <div v-else-if="!queryHasBeenSent">
+                First query
+            </div>
+          <div v-else v-for="fact in facts"
                class="row-column-reverse-s flex-y-center flex-y-stretch-s flex-x-around margin-50-bottom">
             <div class="cell-8">
               <a class="margin-0-top-s block align-center-s txt-size-medium margin-0-bottom"
@@ -132,6 +135,8 @@
         query: '',
         facts: {},
         loading: false,
+        queryHasBeenSent: false,
+        /* ******* Filter variables ******* */
         dateOrder: false,
         truthinessOrder: false
       }
@@ -142,6 +147,7 @@
         this.$http.get(`http://localhost:4000/search/${this.query}`).then(response => {
           this.facts = response.body
           this.loading = false
+          this.queryHasBeenSent = true
         }, response => {
           // error callback
         })
