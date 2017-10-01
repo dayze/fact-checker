@@ -14,7 +14,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
-    "magic-monkey": "^1.0.14",
+    "magic-monkey": "^1.0.16",
     "moment": "^2.18.1",
     "vue": "^2.4.4",
     "vue-property-decorator": "^4.0.0",

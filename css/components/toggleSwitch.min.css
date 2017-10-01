@@ -3,6 +3,7 @@ li.vertical-middle {
 }
 
 .onoffswitch {
+  display: inline-block;
   position: relative;
   width: 90px;
   vertical-align: middle;
