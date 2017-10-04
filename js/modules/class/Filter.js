@@ -1,4 +1,4 @@
-import moment from 'moment'
+import Moment from 'moment'
 
 export default class Filter {
   constructor (data) {
@@ -7,14 +7,16 @@ export default class Filter {
 
   orderArrayByDateAsc () {
     this.data.sort(function (a, b) {
-      return moment(a.date).format('X') - moment(b.date).format('X')
+      return Moment(a.date).format('X') - Moment(b.date).format('X')
     })
+    return this.data
   }
 
   orderArrayByDateDesc () {
     this.data.sort(function (a, b) {
-      return moment(b.date).format('X') - moment(a.date).format('X')
+      return Moment(b.date).format('X') - Moment(a.date).format('X')
     })
+    return this.data
   }
 
   orderArrayByTruthinessTrue () {
@@ -25,6 +27,14 @@ export default class Filter {
   orderArrayByTruthinessFalse () {
     let {arrayTrue, arrayHalf, arrayFalse} = this._orderArrayByTruthiness()
     return arrayFalse.concat(arrayHalf).concat(arrayTrue)
+  }
+
+  orderArrayBetweenDate (date) {
+    for (let data of this.data) {
+      data.date = new Moment(data.date)
+      data.isVisible = data.date.isBetween(date.beginDate, date.endDate)
+    }
+    return this.data
   }
 
   _orderArrayByTruthiness () {
