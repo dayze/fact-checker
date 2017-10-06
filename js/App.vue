@@ -16,7 +16,7 @@
                            class="width-60 width-50-m width-100-s padding border-none shaded-box margin-15-top-xs"
                            id="inputSearch" name="inputSearch" type="search" title="Type something ..."
                            placeholder="Trump Sharks Miami ..." autofocus/>
-                    <button v-on:keyup.enter="key" @click="search"
+                    <button @click="search"
                             id="searchBtn" title="Launch the research"
                             class="margin-30-top-s border-none color-yang transition-3 bg-turquoise hover-bg-concrete padding-5 padding-15-right-left">
                         <span class="hide-m show-xs">Search</span>
@@ -135,7 +135,9 @@
                                 </a>
                                 <span class="txt-i color-asbestos">{{ fact.date }}</span>
                                 <p>
-                                    {{ fact.content }}
+                                    <a :href="urlFact(fact)" target="_blank">
+                                        {{ fact.content }}
+                                    </a>
                                 </p>
                             </div>
                             <div :class="thruthiness(fact.truthiness)"
@@ -240,6 +242,9 @@
         if (this.queryHasBeenSent) {
           this.facts = this.filter.orderArrayBetweenDate({beginDate: this.beginDate, endDate: this.endDate})
         }
+      },
+      urlFact (fact) {
+        return `http://www.politifact.com/${fact.link}`
       }
     },
     mounted () {
