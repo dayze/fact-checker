@@ -228,6 +228,7 @@
       /* ******* Filters ******* */
       orderDate () {
         if (this.dateOrder) {
+          console.log(Moment(this.facts[0].date).format('X'))
           this.facts = this.filter.orderArrayByDateAsc()
         } else {
           this.facts = this.filter.orderArrayByDateDesc()
