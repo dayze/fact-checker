@@ -5,6 +5,7 @@ import 'magic-monkey/stylesheets/magic-monkey.min.css'
 import '../css/components/checkboxes.min.css'
 import '../css/components/toggleSwitch.min.css'
 import '../css/components/accordion.min.css'
+import '../css/components/scrollBack.min.css'
 import VueResource from 'vue-resource'
 
 Vue.use(VueResource)

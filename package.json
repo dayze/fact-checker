@@ -14,12 +14,12 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
-    "magic-monkey": "^1.0.16",
-    "moment": "^2.18.1",
-    "vue": "^2.4.4",
+    "magic-monkey": "^1.0.23",
+    "moment": "^2.19.1",
+    "vue": "^2.5.2",
     "vue-property-decorator": "^4.0.0",
     "vue-resource": "^1.3.4",
-    "vuejs-datepicker": "^0.9.16"
+    "vuejs-datepicker": "^0.9.17"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.0",
