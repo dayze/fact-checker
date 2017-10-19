@@ -142,7 +142,7 @@
               </div>
               <div :class="thruthiness(fact.truthiness)"
                    class="cell-3 align-center shaded-box border-3 round-50 padding-50-top-bottom padding-15-s">
-                <span>It's fucking</span>
+                <span>It's</span>
                 <span :class="thruthiness(fact.truthiness, true)"
                       class="block txt-upper txt-size-medium">{{fact.truthiness}}</span>
               </div>
