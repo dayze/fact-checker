@@ -44,6 +44,9 @@
                        @click="orderDate">
                 <label for="inputDate" class="color-turquoise">date</label>
               </li>
+                <li class="padding-top-bottom">
+                    <span @click="orderRelevancy" style="cursor: pointer" class="hover-color-peter-river">Relevancy</span>
+                </li>
               <li class="vertical-middle padding-top-bottom">
                 <div class="onoffswitch">
                   <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
@@ -194,6 +197,7 @@
         /* ******* Filter variables ******* */
         dateOrder: true,
         truthinessOrder: false,
+        relevancyOrder: true,
         beginDate: {_d: ''},
         endDate: {_d: ''}
       }
@@ -229,14 +233,16 @@
       /* ******* Filters ******* */
       orderDate () {
         if (this.dateOrder) {
-          console.log(Moment(this.facts[0].date).format('X'))
           this.facts = this.filter.orderArrayByDateAsc()
         } else {
           this.facts = this.filter.orderArrayByDateDesc()
         }
       },
       orderTruthiness () {
-        this.facts = this.truthinessOrder ? this.filter.orderArrayByTruthinessTrue() : this.filter.orderArrayByTruthinessFalse()
+        this.facts = this.truthinessOrder ? this.filter.orderArrayByTruthinessFalse() : this.filter.orderArrayByTruthinessTrue()
+      },
+      orderRelevancy () {
+        this.facts = this.filter.orderArrayByRelevancyAsc()
       },
       updateDate (type, date) {
         this.beginDate = new Moment(date.beginDate)

@@ -37,6 +37,19 @@ export default class Filter {
     return this.data
   }
 
+  orderArrayByRelevancyDesc () {
+    this.data.sort(function (a, b) {
+      return a.score - b.score
+    })
+    return this.data
+  }
+
+  orderArrayByRelevancyAsc () {
+    this.data.sort(function (a, b) {
+      return b.score - a.score
+    })
+    return this.data
+  }
   _orderArrayByTruthiness () {
     let arrayTrue = []
     let arrayFalse = []
